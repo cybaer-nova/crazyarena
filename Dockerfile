@@ -9,5 +9,3 @@ RUN apt-get install -y python3-vcstool python3-catkin-tools protobuf-compiler li
 RUN rosdep update
 RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 RUN apt-get install python3-rosdep python3-wstool ros-noetic-ros libgoogle-glog-dev
-
-RUN echo "ALL Done"

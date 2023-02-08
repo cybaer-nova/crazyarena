@@ -1,6 +1,9 @@
 
-docker build -t crazyarena .
 
+if [[ $* == --build ]]
+then
+    docker build -t crazyarena .
+fi
 
 xhost local:root
 XAUTH=/tmp/.docker.xauth
@@ -18,8 +21,7 @@ docker run -i -d \
     crazyarena:latest \
     bash
 
-docker exec -w /crazyarena crazyarena bash -c "./install_crazyarena.bash"
-
-#docker stop crazyarena
-
-#docker rm crazyarena
+if [[ $* == --install ]]
+then
+    docker exec -w /crazyarena crazyarena bash -c "./install_crazyarena.bash"
+fi
