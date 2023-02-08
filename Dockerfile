@@ -1,11 +1,13 @@
 FROM osrf/ros:noetic-desktop-full
 
 RUN apt-get update
-RUN apt-get install -y git && apt-get install -y python3-pip
-RUN mkdir -p ~/catkin_ws/src && \
-    cd ~/catkin_ws/src/
+RUN apt-get install -y git && apt-get install -y python3-pip && apt-get install -y nano && apt-get install -y curl
 
-RUN git clone https://github.com/noshluk2/ros1_wiki && \
-    cd ~/catkin_ws
+RUN apt-get install -y ros-noetic-joy ros-noetic-octomap-ros ros-noetic-mavlink
+RUN apt-get install -y ros-noetic-octomap-mapping ros-noetic-control-toolbox
+RUN apt-get install -y python3-vcstool python3-catkin-tools protobuf-compiler libgoogle-glog-dev
+RUN rosdep update
+RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+RUN apt-get install python3-rosdep python3-wstool ros-noetic-ros libgoogle-glog-dev
 
 RUN echo "ALL Done"

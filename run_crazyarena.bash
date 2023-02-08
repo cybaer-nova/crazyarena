@@ -1,19 +1,25 @@
 
+docker build -t crazyarena .
+
 
 xhost local:root
-
-
 XAUTH=/tmp/.docker.xauth
 
-
-docker run -it \
+docker run -i -d \
     --name=crazyarena \
     --env="DISPLAY=$DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --env="XAUTHORITY=$XAUTH" \
     --volume="$XAUTH:$XAUTH" \
+    --volume="$(pwd):/crazyarena" \
     --net=host \
     --privileged \
     crazyarena:latest \
     bash
+
+docker exec -w /crazyarena crazyarena bash -c "./install_crazyarena.bash"
+
+#docker stop crazyarena
+
+#docker rm crazyarena
