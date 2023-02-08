@@ -1,6 +1,6 @@
 
 
-if [[ $* == --build ]]
+if [[ $* == -b ]] || [[ $* == -bi ]]
 then
     docker build -t crazyarena .
 fi
@@ -21,7 +21,7 @@ docker run -i -d \
     crazyarena:latest \
     bash
 
-if [[ $* == --install ]]
+if [[ $* == -i ]] || [[ $* == -bi ]]
 then
     docker exec -w /crazyarena crazyarena bash -c "./install_crazyarena.bash"
 fi
