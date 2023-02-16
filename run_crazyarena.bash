@@ -27,11 +27,3 @@ docker run -i -d \
     --workdir /home/crazyuser \
     crazyarena:latest \
     bash
-
-if [[ $* == -i ]] || [[ $* == -bi ]]
-then
-    docker exec -w /home/crazyuser crazyarena bash -c "./install_crazyarena.bash"
-fi
-
-
-#--volume="$(pwd)/catkin_ws:/home/crazyuser/catkin_ws:rw" \
