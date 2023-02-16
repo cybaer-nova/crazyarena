@@ -25,5 +25,6 @@ docker exec -it crazyarena bash
 
 Moreover both the CrazyS and Crazyswarm workspaces are available outside the container using docker volumes making it easy to edit files inside them.
 
-
+> **Warning**
+> Make sure you only make changes to the contents of the volumes (catkin_ws and crazyswarm folders) while the container is running, otherwise the changes are not persistent and you will loose them.
 
