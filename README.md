@@ -11,7 +11,7 @@ git clone https://github.com/hardtekpt/crazyarena
 cd crazyarena
 ```
 
-Run the script to build the image and start the crazyarena. The -b flag is only necessary for the first time you start the crazyarena.
+Run the script to build the image and start the crazyarena. The ```-b``` flag is only necessary for the first time you start the crazyarena.
 
 ```bash
 ./run_crazyarena.bash -b
