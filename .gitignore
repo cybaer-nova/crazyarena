@@ -1,1 +1,3 @@
-catkin_ws/*
+catkin_ws/
+.vscode/
+crazyswarm/
