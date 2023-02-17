@@ -37,6 +37,12 @@ docker stop crazyarena
 docker start crazyarena
 ```
 
+If you need privileged access to the container you can open a new shell with the root user:
+
+```bash
+docker exec -it -u root crazyarena bash
+```
+
 The repository also includes a convenience script to remove the container, image and volumes from docker. 
 
 > **Note** 

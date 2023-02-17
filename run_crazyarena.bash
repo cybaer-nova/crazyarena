@@ -1,6 +1,6 @@
 
 
-if [[ $* == -b ]] || [[ $* == -bi ]]
+if [[ $* == -b ]]
 then
     docker build -t crazyarena .
     mkdir catkin_ws
