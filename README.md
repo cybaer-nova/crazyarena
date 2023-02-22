@@ -4,7 +4,7 @@ This repository makes use of the CrazyS and Crazyswarm packages to provide a sta
 
 ### Prerequesites
 
-Make sure you have docker properly installed before continuing, official instalation instructions are available [here](https://docs.docker.com/get-docker/). It is also recommended that you visit the documentation for [CrazyS](https://github.com/gsilano/CrazyS/wiki) and [Crazyswarm](https://crazyswarm.readthedocs.io/en/latest/index.html) 
+Make sure you have docker properly installed before continuing, official instalation instructions are available [here](https://docs.docker.com/get-docker/). It is also recommended that you visit the documentation for [CrazyS](https://github.com/gsilano/CrazyS/wiki) and [Crazyswarm](https://crazyswarm.readthedocs.io/en/latest/index.html).
 ### Installation Instructions
 
 Start by cloning this repository.
