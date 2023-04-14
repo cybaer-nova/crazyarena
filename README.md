@@ -56,7 +56,7 @@ The repository also includes a convenience script to remove the container, image
 > **Warning**
 > Make sure you only make changes to the contents of the volumes (catkin_ws and crazyswarm folders) while the container is running, otherwise the changes are not persistent and you will loose them.
 
-======================================================================================================================================================================================
+---
 
 > **Note** 
 > If you encouter the issue *ModuleNotFoundError: No module named 'crazyswarm'* while running a real experiment using the crazyswarm, add these lines in the begining of the *crazyflie.py* file.
