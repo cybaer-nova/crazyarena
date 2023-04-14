@@ -16,6 +16,9 @@ docker run -i -d \
     --name=crazyarena \
     --env="DISPLAY=$DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
+    --env="NVIDIA_DRIVER_CAPABILITIES=all" \
+    --runtime="nvidia" \
+    --gpus="all" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --env="XAUTHORITY=$XAUTH" \
     --volume="$XAUTH:$XAUTH" \

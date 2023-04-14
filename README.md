@@ -1,6 +1,6 @@
 # Crazyarena Repository
 
-This repository makes use of the CrazyS and Crazyswarm packages to provide a starting point for running simulations and real experiments using one or more Crazyflies. The crazyarena repository makes use of docker to simplify the installation procedure.
+This repository makes use of the **CrazyS** and **Crazyswarm** packages as well as the **cfclient** to provide a starting point for running simulations and real experiments using one or more Crazyflies. The crazyarena repository makes use of docker to simplify the installation procedure.
 
 ### Prerequesites
 
@@ -30,7 +30,7 @@ Moreover both the CrazyS and Crazyswarm workspaces are available outside the con
 
 ### Dealing with docker containers
 
-After running the `run_crazyarena.bash -b` installation script the crazyarena container will start. Additionally, docker will start the container automatically on boot. If for some reason you need to stop or start the container the following commands might be helpful.
+After running the `run_crazyarena.bash -b` installation script the crazyarena container will start. If for some reason you need to stop or start the container the following commands might be helpful.
 
 ```bash
 docker stop crazyarena
