@@ -14,15 +14,16 @@ git clone https://github.com/hardtekpt/crazyarena
 cd crazyarena
 ```
 
-Run the script to build the image and start the crazyarena. The ```-b``` flag is only necessary for the first time you start the crazyarena.
+A script is provided to install the crazyarena. The build flag ```-b``` can be used to build the image in adition to creating the container. This flag takes an argument regarding the base image to use. If you have an nvidia gpu then use the **cuda** image as it contains the nvidia drivers, otherwise use the **base** image.
 
 ```bash
-./run_crazyarena.bash -b
+./run_crazyarena.bash -b <base,cuda>
 ```
 
-After the installation is complete it is possible to open a shell inside the crazyarena container. 
+After the installation is complete it is possible to start the crazyarena container and open a shell inside. 
 
 ```bash
+docker start crazyarena
 docker exec -it crazyarena bash
 ```
 

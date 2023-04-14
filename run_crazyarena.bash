@@ -1,8 +1,22 @@
 
+IMAGE="osrf/ros:noetic-desktop-full"
 
-if [[ $* == -b ]]
+while getopts b: flag
+do
+    case "${flag}" in
+        b) build=${OPTARG};;
+    esac
+done
+
+if [[ $build == cuda ]]
 then
-    docker build -t crazyarena .
+    docker build --file Dockerfile-base-cuda -t base-cuda .
+    IMAGE="base-cuda"
+fi
+
+if [[ $1 == -b ]]
+then
+    docker build --build-arg image=$IMAGE -t crazyarena .
     mkdir catkin_ws
     docker volume create --driver local -o o=bind -o type=none -o device="$(pwd)/catkin_ws" crazyarena_catkin_ws_volume 
     mkdir crazyswarm
@@ -12,7 +26,7 @@ fi
 xhost local:root
 XAUTH=/tmp/.docker.xauth
 
-docker run -i -d \
+docker create -i \
     --name=crazyarena \
     --env="DISPLAY=$DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
@@ -28,5 +42,4 @@ docker run -i -d \
     --privileged \
     --user crazyuser \
     --workdir /home/crazyuser \
-    crazyarena:latest \
-    bash
+    crazyarena
