@@ -31,7 +31,7 @@ Moreover both the CrazyS and Crazyswarm workspaces are available outside the con
 
 ### Dealing with docker containers
 
-After running the `run_crazyarena.bash -b` installation script the crazyarena container will start. If for some reason you need to stop or start the container the following commands might be helpful.
+If for some reason you need to stop or start the container the following commands might be helpful.
 
 ```bash
 docker stop crazyarena
