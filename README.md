@@ -59,7 +59,7 @@ The repository also includes a convenience script to remove the container, image
 ---
 
 > **Note** 
-> If you encouter the issue *ModuleNotFoundError: No module named 'crazyswarm'* while running a real experiment using the crazyswarm, add these lines in the begining of the *crazyflie.py* file.
+> If you encouter the issue *ModuleNotFoundError: No module named 'crazyswarm'* while running a real experiment using the crazyswarm package, add these lines in the begining of the *crazyflie.py* file.
 
 ```bash
 # /home/crazyuser/crazyswarm/ros_ws/src/crazyswarm/scripts/pycrazyswarm/crazyflie.py
