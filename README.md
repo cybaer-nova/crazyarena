@@ -2,9 +2,12 @@
 
 This repository makes use of the **CrazyS** and **Crazyswarm** packages as well as the **cfclient** to provide a starting point for running simulations and real experiments using one or more Crazyflies. The crazyarena repository makes use of docker to simplify the installation procedure.
 
+---
 ### Prerequesites
 
 Make sure you have docker properly installed before continuing, official instalation instructions are available [here](https://docs.docker.com/get-docker/). It is also recommended that you visit the documentation for [CrazyS](https://github.com/gsilano/CrazyS/wiki) and [Crazyswarm](https://crazyswarm.readthedocs.io/en/latest/index.html).
+
+---
 ### Installation Instructions
 
 Start by cloning this repository.
@@ -29,6 +32,7 @@ docker exec -it crazyarena bash
 
 Moreover both the CrazyS and Crazyswarm workspaces are available outside the container using docker volumes making it easy to edit files inside them.
 
+---
 ### Dealing with docker containers
 
 If for some reason you need to stop or start the container the following commands might be helpful.
@@ -57,9 +61,9 @@ The repository also includes a convenience script to remove the container, image
 > Make sure you only make changes to the contents of the volumes (catkin_ws and crazyswarm folders) while the container is running, otherwise the changes are not persistent and you will loose them.
 
 ---
+### Common errors
 
-> **Note** 
-> If you encouter the issue *ModuleNotFoundError: No module named 'crazyswarm'* while running a real experiment using the crazyswarm package, add these lines in the begining of the *crazyflie.py* file.
+If you encouter the issue *ModuleNotFoundError: No module named 'crazyswarm'* while running a real experiment using the crazyswarm package, add these lines in the begining of the *crazyflie.py* file.
 
 ```python
 # /home/crazyuser/crazyswarm/ros_ws/src/crazyswarm/scripts/pycrazyswarm/crazyflie.py
