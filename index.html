@@ -17,7 +17,7 @@
     
     
       
-        <title>Sensor Network Documentation</title>
+        <title>Crazyarena Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#index" class="md-skip">
+        <a href="#crazyarena-repository" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Sensor Network Documentation" class="md-header__button md-logo" aria-label="Sensor Network Documentation" data-md-component="logo">
+    <a href="." title="Crazyarena Documentation" class="md-header__button md-logo" aria-label="Crazyarena Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -95,7 +95,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Sensor Network Documentation
+            Crazyarena Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -208,13 +208,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Sensor Network Documentation" class="md-nav__button md-logo" aria-label="Sensor Network Documentation" data-md-component="logo">
+    <a href="." title="Crazyarena Documentation" class="md-nav__button md-logo" aria-label="Crazyarena Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    Sensor Network Documentation
+    Crazyarena Documentation
   </label>
   
     <div class="md-nav__source">
@@ -248,9 +248,61 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         Introduction
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequesites" class="md-nav__link">
+    Prerequesites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-instructions" class="md-nav__link">
+    Installation Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dealing-with-docker-containers" class="md-nav__link">
+    Dealing with docker containers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    Common errors
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -340,6 +392,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequesites" class="md-nav__link">
+    Prerequesites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-instructions" class="md-nav__link">
+    Installation Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dealing-with-docker-containers" class="md-nav__link">
+    Dealing with docker containers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    Common errors
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -356,7 +444,53 @@
 
 
 
-<h1 id="index">Index</h1>
+<h1 id="crazyarena-repository">Crazyarena Repository</h1>
+<p>This repository makes use of the <strong>CrazyS</strong> and <strong>Crazyswarm</strong> packages as well as the <strong>cfclient</strong> to provide a starting point for running simulations and real experiments using one or more Crazyflies. The crazyarena repository makes use of docker to simplify the installation procedure.</p>
+<hr />
+<h3 id="prerequesites">Prerequesites</h3>
+<p>Make sure you have docker properly installed before continuing, official instalation instructions are available <a href="https://docs.docker.com/get-docker/">here</a>. It is also recommended that you visit the documentation for <a href="https://github.com/gsilano/CrazyS/wiki">CrazyS</a> and <a href="https://crazyswarm.readthedocs.io/en/latest/index.html">Crazyswarm</a>.</p>
+<hr />
+<h3 id="installation-instructions">Installation Instructions</h3>
+<p>Start by cloning this repository.</p>
+<pre><code class="language-bash">git clone https://github.com/hardtekpt/crazyarena
+cd crazyarena
+</code></pre>
+<p>A script is provided to install the crazyarena. The build flag <code>-b</code> can be used to build the image in adition to creating the container. This flag takes an argument regarding the base image to use. If you have an nvidia gpu then use the <strong>cuda</strong> image as it contains the nvidia drivers, otherwise use the <strong>base</strong> image.</p>
+<pre><code class="language-bash">./run_crazyarena.bash -b &lt;base,cuda&gt;
+</code></pre>
+<p>After the installation is complete it is possible to start the crazyarena container and open a shell inside. </p>
+<pre><code class="language-bash">docker start crazyarena
+docker exec -it crazyarena bash
+</code></pre>
+<p>Moreover both the CrazyS and Crazyswarm workspaces are available outside the container using docker volumes making it easy to edit files inside them.</p>
+<hr />
+<h3 id="dealing-with-docker-containers">Dealing with docker containers</h3>
+<p>If for some reason you need to stop or start the container the following commands might be helpful.</p>
+<pre><code class="language-bash">docker stop crazyarena
+docker start crazyarena
+</code></pre>
+<p>If you need privileged access to the container you can open a new shell with the root user:</p>
+<pre><code class="language-bash">docker exec -it -u root crazyarena bash
+</code></pre>
+<p>The repository also includes a convenience script to remove the container, image and volumes from docker. </p>
+<blockquote>
+<p><strong>Note</strong> 
+If you are using this script as middle step to fix your installation don't forget to delete the catkin_ws and crazyswarm folders before installing again.</p>
+</blockquote>
+<pre><code class="language-bash">./rm_crazyarena.bash
+</code></pre>
+<blockquote>
+<p><strong>Warning</strong>
+Make sure you only make changes to the contents of the volumes (catkin_ws and crazyswarm folders) while the container is running, otherwise the changes are not persistent and you will loose them.</p>
+</blockquote>
+<hr />
+<h3 id="common-errors">Common errors</h3>
+<p>If you encouter the issue <em>ModuleNotFoundError: No module named 'crazyswarm'</em> while running a real experiment using the crazyswarm package, add these lines in the begining of the <em>crazyflie.py</em> file.</p>
+<pre><code class="language-python"># /home/crazyuser/crazyswarm/ros_ws/src/crazyswarm/scripts/pycrazyswarm/crazyflie.py
+
+from os.path import dirname, abspath
+sys.path.insert(0, dirname(dirname(dirname(abspath(__file__)))))
+</code></pre>
 
               
             </article>
