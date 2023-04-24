@@ -51,7 +51,7 @@ theme:
   - search.share
   - navigation.footer
   - navigation.path
-  - toc.follow
+  - toc.integrate
   - navigation.indexes
 markdown_extensions:
   - pymdownx.highlight:
@@ -85,6 +85,6 @@ nav:
     - Repository Structure: 'repo_structure.md'
     - Install Guide: 'install_guide.md'
     - Docker Containers: 'docker.md'
-  #- Examples:
-  - Hello World: 'hello_world.md'
+  - Examples:
+    - Hello World: 'hello_world.md'
   - Common Errors: 'common_errors.md'
