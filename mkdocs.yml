@@ -10,16 +10,19 @@ theme:
   palette:
   - media: '(prefers-color-scheme: light)'
     scheme: default
+    primary: blue
+    accent: blue
     toggle:
       icon: material/toggle-switch-off-outline
       name: Switch to dark mode
   - media: '(prefers-color-scheme: dark)'
     scheme: slate
+    primary: blue
+    accent: blue
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
-  - primary: blue
-  - accent: blue
+  
   icon:
     logo: material/rocket-launch 
     repo: fontawesome/brands/git-alt
