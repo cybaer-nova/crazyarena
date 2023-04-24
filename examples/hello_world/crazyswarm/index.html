@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#simulation" class="md-skip">
+        <a href="#packagexml" class="md-skip">
           Skip to content
         </a>
       
@@ -453,6 +453,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#packagexml" class="md-nav__link">
+    package.xml
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmakeliststxt" class="md-nav__link">
+    CMakeLists.txt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hello_worldpy" class="md-nav__link">
+    hello_world.py
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crazyfliesyaml" class="md-nav__link">
+    crazyflies.yaml
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#simulation" class="md-nav__link">
     Simulation
   </a>
@@ -523,9 +551,121 @@
 
   <h1>Crazyswarm</h1>
 
-<p>test</p>
+<p>This simulation makes use of the <strong>Crazyswarm</strong> package to run a simulation where a single crazyflie takes-off, hovers and lands. First we need to create a package. Navigate to the crazyswarm workspace and run the following commands to create the files needed.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> crazyswarm/ros_ws/src
+mkdir -p hello_world/scripts
+<span class="nb">cd</span> hello_world
+mkdir launch
+touch package.xml
+touch CMakeLists.txt
+<span class="nb">cd</span> scripts
+touch hello_world.py
+<span class="nb">cd</span> ../launch
+touch crazyflies.yaml
+</code></pre></div>
+<p>Now open this folder and edit the files created according to the following instructions. </p>
+<h4 id="packagexml">package.xml</h4>
+<p>Copy this into the <strong>package.xml</strong> file to include the needed libraries.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;package</span> <span class="na">format=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;name&gt;</span>hello_world<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;version&gt;</span>0.0.0<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;description&gt;</span>The hello_world package<span class="nt">&lt;/description&gt;</span>
+
+  <span class="c">&lt;!-- One maintainer tag required, multiple allowed, one person per tag --&gt;</span>
+  <span class="c">&lt;!-- Example:  --&gt;</span>
+  <span class="c">&lt;!-- &lt;maintainer email=&quot;jane.doe@example.com&quot;&gt;Jane Doe&lt;/maintainer&gt; --&gt;</span>
+  <span class="nt">&lt;maintainer</span> <span class="na">email=</span><span class="s">&quot;crazyuser@todo.todo&quot;</span><span class="nt">&gt;</span>crazyuser<span class="nt">&lt;/maintainer&gt;</span>
+
+  <span class="c">&lt;!-- One license tag required, multiple allowed, one license per tag --&gt;</span>
+  <span class="c">&lt;!-- Commonly used license strings: --&gt;</span>
+  <span class="c">&lt;!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 --&gt;</span>
+  <span class="nt">&lt;license&gt;</span>TODO<span class="nt">&lt;/license&gt;</span>
+
+  <span class="nt">&lt;build_depend&gt;</span>message_generation<span class="nt">&lt;/build_depend&gt;</span>
+  <span class="nt">&lt;exec_depend&gt;</span>message_runtime<span class="nt">&lt;/exec_depend&gt;</span>
+  <span class="nt">&lt;buildtool_depend&gt;</span>catkin<span class="nt">&lt;/buildtool_depend&gt;</span>
+  <span class="nt">&lt;build_depend&gt;</span>rospy<span class="nt">&lt;/build_depend&gt;</span>
+  <span class="nt">&lt;build_depend&gt;</span>std_msgs<span class="nt">&lt;/build_depend&gt;</span>
+  <span class="nt">&lt;build_depend&gt;</span>geometry_msgs<span class="nt">&lt;/build_depend&gt;</span>
+  <span class="nt">&lt;build_depend&gt;</span>rosgraph_msgs<span class="nt">&lt;/build_depend&gt;</span>
+  <span class="nt">&lt;build_depend&gt;</span>vizualization_msgs<span class="nt">&lt;/build_depend&gt;</span>
+  <span class="nt">&lt;build_depend&gt;</span>crazyswarm<span class="nt">&lt;/build_depend&gt;</span>
+  <span class="nt">&lt;build_export_depend&gt;</span>rospy<span class="nt">&lt;/build_export_depend&gt;</span>
+  <span class="nt">&lt;build_export_depend&gt;</span>std_msgs<span class="nt">&lt;/build_export_depend&gt;</span>
+  <span class="nt">&lt;exec_depend&gt;</span>rospy<span class="nt">&lt;/exec_depend&gt;</span>
+  <span class="nt">&lt;exec_depend&gt;</span>std_msgs<span class="nt">&lt;/exec_depend&gt;</span>
+  <span class="nt">&lt;exec_depend&gt;</span>geometry_msgs<span class="nt">&lt;/exec_depend&gt;</span>
+  <span class="nt">&lt;exec_depend&gt;</span>rosgraph_msgs<span class="nt">&lt;/exec_depend&gt;</span>
+  <span class="nt">&lt;exec_depend&gt;</span>vizualization_msgs<span class="nt">&lt;/exec_depend&gt;</span>
+  <span class="nt">&lt;exec_depend&gt;</span>crazyswarm<span class="nt">&lt;/exec_depend&gt;</span>
+
+<span class="nt">&lt;/package&gt;</span>
+</code></pre></div>
+<h4 id="cmakeliststxt">CMakeLists.txt</h4>
+<p>Copy this into the CMakeLists.txt file to include the needed libraries.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.0.2</span><span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span><span class="s">hello_world</span><span class="p">)</span>
+
+<span class="nb">find_package</span><span class="p">(</span><span class="s">catkin</span> <span class="s">REQUIRED</span> <span class="s">COMPONENTS</span>
+  <span class="s">rospy</span>
+  <span class="s">std_msgs</span>
+  <span class="s">geometry_msgs</span>
+  <span class="s">rosgraph_msgs</span>
+  <span class="s">crazyswarm</span>
+<span class="p">)</span>
+
+<span class="nb">catkin_package</span><span class="p">(</span>
+<span class="p">)</span>
+
+<span class="nb">include_directories</span><span class="p">(</span>
+  <span class="o">${</span><span class="nv">catkin_INCLUDE_DIRS</span><span class="o">}</span>
+<span class="p">)</span>
+</code></pre></div>
+<h4 id="hello_worldpy">hello_world.py</h4>
+<p>This file contains the actual script that sends the take-off, hover and land commands to the crazyfly. Copy the following into the file.</p>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;Takeoff-hover-land for one CF. Useful to validate hardware config.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">dirname</span><span class="p">,</span> <span class="n">abspath</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dirname</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))))</span><span class="o">+</span><span class="s2">&quot;/crazyswarm/scripts&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))))</span><span class="o">+</span><span class="s2">&quot;/crazyswarm/scripts&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pycrazyswarm</span> <span class="kn">import</span> <span class="n">Crazyswarm</span>
+
+
+<span class="n">TAKEOFF_DURATION</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">HOVER_DURATION</span> <span class="o">=</span> <span class="mf">5.0</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">crazyflies_yaml</span> <span class="o">=</span> <span class="n">dirname</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))</span><span class="o">+</span><span class="s2">&quot;/launch/crazyflies.yaml&quot;</span>
+    <span class="n">swarm</span> <span class="o">=</span> <span class="n">Crazyswarm</span><span class="p">(</span><span class="n">crazyflies_yaml</span><span class="o">=</span><span class="n">crazyflies_yaml</span><span class="p">)</span>
+    <span class="n">timeHelper</span> <span class="o">=</span> <span class="n">swarm</span><span class="o">.</span><span class="n">timeHelper</span>
+    <span class="n">cf</span> <span class="o">=</span> <span class="n">swarm</span><span class="o">.</span><span class="n">allcfs</span><span class="o">.</span><span class="n">crazyflies</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">cf</span><span class="o">.</span><span class="n">takeoff</span><span class="p">(</span><span class="n">targetHeight</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">TAKEOFF_DURATION</span><span class="p">)</span>
+    <span class="n">timeHelper</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">TAKEOFF_DURATION</span> <span class="o">+</span> <span class="n">HOVER_DURATION</span><span class="p">)</span>
+    <span class="n">cf</span><span class="o">.</span><span class="n">land</span><span class="p">(</span><span class="n">targetHeight</span><span class="o">=</span><span class="mf">0.04</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+    <span class="n">timeHelper</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">TAKEOFF_DURATION</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<h4 id="crazyfliesyaml">crazyflies.yaml</h4>
+<p>This file contains your vehicle definitions. To learn how to use this file check the <strong>Crazyswarm</strong> documentaion. For now a simulation example is given.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">crazyflies</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="nt">channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100</span>
+  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="nt">initialPosition</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">1.5</span><span class="p p-Indicator">,</span> <span class="nv">1.5</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">]</span>
+  <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">medium</span>
+</code></pre></div>
+<p>Now that all the files have been edited the package can be built. This only needs to be done once to create the package as python scripts do not need to be compiled. Navigate to the crazyswarm/ros_ws folder and run the command <code>catkin_make</code> to build the workspace. After this the newly built workspace must be sourced. To do this run the command <code>source devel/setup.bash</code>.</p>
 <h4 id="simulation">Simulation</h4>
-<p>test</p>
+<p>To run the simulation execute the following commands.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/crazyswarm/ros_ws/src/hello_world/scripts
+chmod +x hello_world.py
+python3 hello_world.py --sim
+</code></pre></div>
 <h4 id="real-experiment">Real Experiment</h4>
 <p>test</p>
 
