@@ -413,6 +413,9 @@
 </span></code></pre></div>
 <p>Moreover both the CrazyS and Crazyswarm workspaces are available outside the container using docker volumes making it easy to edit files inside them.</p>
 <p>The repository also includes a convenience script to remove the container, image and volumes from docker. </p>
+<p>!!! note</p>
+<div class="language-text highlight"><pre><span></span><code>If you are using this script as middle step to fix your installation don&#39;t forget to delete the catkin_ws and crazyswarm folders before installing again.
+</code></pre></div>
 <blockquote>
 <p><strong>Note</strong> 
 If you are using this script as middle step to fix your installation don't forget to delete the catkin_ws and crazyswarm folders before installing again.</p>
@@ -421,7 +424,7 @@ If you are using this script as middle step to fix your installation don't forge
 </span></code></pre></div>
 <blockquote>
 <p><strong>Warning</strong>
-Make sure you only make changes to the contents of the volumes (catkin_ws and crazyswarm folders) while the container is running, otherwise the changes are not persistent and you will loose them.</p>
+Make sure you only make changes to the contents of the volumes (catkin_ws and crazyswarm folders) while the container is running, otherwise the changes are not persistent and you may loose them.</p>
 </blockquote>
 
 
