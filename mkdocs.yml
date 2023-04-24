@@ -18,6 +18,8 @@ theme:
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
+  - primary: blue
+  - accent: blue
   icon:
     logo: material/rocket-launch 
     repo: fontawesome/brands/git-alt
