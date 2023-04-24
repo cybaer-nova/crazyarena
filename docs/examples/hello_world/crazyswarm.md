@@ -1,9 +1,3 @@
-
-### Using CrazyS
-
-
-test
-
 ### Using Crazyswarm
 
 test

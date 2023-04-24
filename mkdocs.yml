@@ -92,6 +92,6 @@ nav:
     - Docker Containers: 'docker.md'
   - Examples:
     - Hello World: 
-      - Cfclient: 'hello_world.md'
-      - Crazyswarm: 'hello_world.md'
+      - CrazyS: 'examples/hello_world/crazys.md'
+      - Crazyswarm: 'examples/hello_world/crazyswarm.md'
   - Common Errors: 'common_errors.md'
