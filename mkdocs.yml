@@ -19,7 +19,8 @@ theme:
       icon: material/toggle-switch
       name: Switch to light mode
   icon:
-    repo: fontawesome/brands/github
+    logo: material/rocket-launch 
+    repo: fontawesome/brands/github-alt
   # Extra features
   features:
     # ---------------------

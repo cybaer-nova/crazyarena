@@ -20,7 +20,7 @@ docker start crazyarena
 docker exec -it crazyarena bash
 ```
 
-Moreover both the CrazyS and Crazyswarm workspaces are available outside the container using docker volumes making it easy to edit files inside them.
+Moreover both the CrazyS and Crazyswarm workspaces are available outside the container using docker volumes making it easy to edit files inside them. These volumes are mapped to the crazyarena repository folder.
 
 The repository also includes a convenience script to remove the container, image and volumes from docker. 
 
