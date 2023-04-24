@@ -16,17 +16,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hardtekpt.github.io/crazyarena/hello_world/</loc>
-         <lastmod>2023-04-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hardtekpt.github.io/crazyarena/install_guide/</loc>
          <lastmod>2023-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hardtekpt.github.io/crazyarena/repo_structure/</loc>
+         <lastmod>2023-04-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hardtekpt.github.io/crazyarena/examples/hello_world/crazys/</loc>
+         <lastmod>2023-04-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hardtekpt.github.io/crazyarena/examples/hello_world/crazyswarm/</loc>
          <lastmod>2023-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
