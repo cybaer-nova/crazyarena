@@ -36,5 +36,10 @@ The repository also includes a convenience script to remove the container, image
 ./rm_crazyarena.bash
 ```
 
+!!! warning
+
+    Make sure you only make changes to the contents of the volumes (catkin_ws and crazyswarm folders) while the container is running, otherwise the changes are not persistent and you may loose them.
+
+
 > **Warning**
 > Make sure you only make changes to the contents of the volumes (catkin_ws and crazyswarm folders) while the container is running, otherwise the changes are not persistent and you may loose them.
