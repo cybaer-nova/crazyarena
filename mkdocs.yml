@@ -58,6 +58,7 @@ markdown_extensions:
 
 plugins:
   - monorepo
+  - typeset
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
       lang:
