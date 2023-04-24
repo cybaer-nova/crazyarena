@@ -65,3 +65,5 @@ nav:
   - Getting Started:
     - Repository Structure: 'repo_structure.md'
     - Install Guide: 'install_guide.md'
+    - Docker Containers: 'docker.md'
+  - Common Errors: 'common_errors.md'

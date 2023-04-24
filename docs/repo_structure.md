@@ -1,7 +1,8 @@
 # Repository Structure
 
-This repository consists of three packages:
+This repository consists of two Dockerfiles along with two scripts:
 
-- **Node**: Arduino code for node devices;
-- **Gateway**: Arduino code for gateway devices;
-- **Network Manager**: Python application for monitoring, managing and communicating with the network.
+- **Dockerfile-base-cuda**: A dockerfile which installs the nvidia drivers on top of the base image;
+- **Dockerfile**: A dockerfile which installs the **CrazyS**, **Crazyswarm** and **cfclient** packages;
+- **run_crazyarena.bash**: A bash script to create the crazyarena docker container as well as to build the images needed.
+- **rm_crazyarena.bash**: A bash script to remove the installation of the crazyarena docker container as well as to remove the images and volumes created.
