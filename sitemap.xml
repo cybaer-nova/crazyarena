@@ -2,17 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://hardtekpt.github.io/crazyarena/</loc>
-         <lastmod>2023-04-23</lastmod>
+         <lastmod>2023-04-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hardtekpt.github.io/crazyarena/common_errors/</loc>
+         <lastmod>2023-04-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hardtekpt.github.io/crazyarena/docker/</loc>
+         <lastmod>2023-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hardtekpt.github.io/crazyarena/install_guide/</loc>
-         <lastmod>2023-04-23</lastmod>
+         <lastmod>2023-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hardtekpt.github.io/crazyarena/repo_structure/</loc>
-         <lastmod>2023-04-23</lastmod>
+         <lastmod>2023-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

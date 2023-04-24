@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Francisco Santos" /><link rel="canonical" href="https://hardtekpt.github.io/crazyarena/repo_structure/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Francisco Santos" /><link rel="canonical" href="https://hardtekpt.github.io/crazyarena/docker/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Repository Structure - Crazyarena Documentation</title>
+    <title>Docker Containers - Crazyarena Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Repository Structure";
-        var mkdocs_page_input_path = "repo_structure.md";
-        var mkdocs_page_url = "/crazyarena/repo_structure/";
+        var mkdocs_page_name = "Docker Containers";
+        var mkdocs_page_input_path = "docker.md";
+        var mkdocs_page_url = "/crazyarena/docker/";
       </script>
     
     <script src="../js/jquery-3.6.0.min.js" defer></script>
@@ -46,13 +46,13 @@
               </ul>
               <p class="caption"><span class="caption-text">Getting Started</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Repository Structure</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../repo_structure/">Repository Structure</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../install_guide/">Install Guide</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker Containers</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Docker Containers</a>
+    <ul class="current">
+    </ul>
                   </li>
               </ul>
               <ul>
@@ -74,9 +74,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>Getting Started &raquo;</li>
-      <li>Repository Structure</li>
+      <li>Docker Containers</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/hardtekpt/crazyarena/edit/master/docs/repo_structure.md">Edit on crazyarena</a>
+          <a href="https://github.com/hardtekpt/crazyarena/edit/master/docs/docker.md">Edit on crazyarena</a>
     </li>
   </ul>
   <hr/>
@@ -84,20 +84,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="repository-structure">Repository Structure</h1>
-<p>This repository consists of two Dockerfiles along with two scripts:</p>
-<ul>
-<li><strong>Dockerfile-base-cuda</strong>: A dockerfile which installs the nvidia drivers on top of the base image;</li>
-<li><strong>Dockerfile</strong>: A dockerfile which installs the <strong>CrazyS</strong>, <strong>Crazyswarm</strong> and <strong>cfclient</strong> packages;</li>
-<li><strong>run_crazyarena.bash</strong>: A bash script to create the crazyarena docker container as well as to build the images needed.</li>
-<li><strong>rm_crazyarena.bash</strong>: A bash script to remove the installation of the crazyarena docker container as well as to remove the images and volumes created.</li>
-</ul>
+                <h1 id="dealing-with-docker-containers">Dealing with docker containers</h1>
+<p>If for some reason you need to stop or start the container the following commands might be helpful.</p>
+<pre><code class="language-bash">docker stop crazyarena
+docker start crazyarena
+</code></pre>
+<p>If you need privileged access to the container you can open a new shell with the root user:</p>
+<pre><code class="language-bash">docker exec -it -u root crazyarena bash
+</code></pre>
+<p>The repository also includes a convenience script to remove the container, image and volumes from docker. </p>
+<blockquote>
+<p><strong>Note</strong> 
+If you are using this script as middle step to fix your installation don't forget to delete the catkin_ws and crazyswarm folders before installing again.</p>
+</blockquote>
+<pre><code class="language-bash">./rm_crazyarena.bash
+</code></pre>
+<blockquote>
+<p><strong>Warning</strong>
+Make sure you only make changes to the contents of the volumes (catkin_ws and crazyswarm folders) while the container is running, otherwise the changes are not persistent and you will loose them.</p>
+</blockquote>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../install_guide/" class="btn btn-neutral float-right" title="Install Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../install_guide/" class="btn btn-neutral float-left" title="Install Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../common_errors/" class="btn btn-neutral float-right" title="Common Errors">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -120,10 +131,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../install_guide/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../install_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../common_errors/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
