@@ -601,55 +601,55 @@ touch hovering_example.launch
 </code></pre></div>
 <h3 id="cmakeliststxt">CMakeLists.txt</h3>
 <p>Finally, fill in the <strong>CMakeLists.txt</strong> file as shown to include all the libraries needed:</p>
-<div class="highlight"><pre><span></span><code>cmake_minimum_required(VERSION 3.0.2)
-project(hello_world)
+<div class="highlight"><pre><span></span><code><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.0.2</span><span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span><span class="s">hello_world</span><span class="p">)</span>
 
-add_definitions(-std=c++11)
+<span class="nb">add_definitions</span><span class="p">(</span><span class="s">-std=c++11</span><span class="p">)</span>
 
-find_package(catkin REQUIRED COMPONENTS
-  mav_msgs
-  roscpp
-  cmake_modules
-)
+<span class="nb">find_package</span><span class="p">(</span><span class="s">catkin</span> <span class="s">REQUIRED</span> <span class="s">COMPONENTS</span>
+  <span class="s">mav_msgs</span>
+  <span class="s">roscpp</span>
+  <span class="s">cmake_modules</span>
+<span class="p">)</span>
 
-find_package(
-  Eigen3 REQUIRED
-)
+<span class="nb">find_package</span><span class="p">(</span>
+  <span class="s">Eigen3</span> <span class="s">REQUIRED</span>
+<span class="p">)</span>
 
-catkin_package(
-  INCLUDE_DIRS ${Eigen3_INCLUDE_DIRS}
-  LIBRARIES spline_trajectory_generator
-  CATKIN_DEPENDS geometry_msgs mav_msgs nav_msgs roscpp sensor_msgs gazebo_msgs
-  DEPENDS Eigen3
-)
+<span class="nb">catkin_package</span><span class="p">(</span>
+  <span class="s">INCLUDE_DIRS</span> <span class="o">${</span><span class="nv">Eigen3_INCLUDE_DIRS</span><span class="o">}</span>
+  <span class="s">LIBRARIES</span> <span class="s">spline_trajectory_generator</span>
+  <span class="s">CATKIN_DEPENDS</span> <span class="s">geometry_msgs</span> <span class="s">mav_msgs</span> <span class="s">nav_msgs</span> <span class="s">roscpp</span> <span class="s">sensor_msgs</span> <span class="s">gazebo_msgs</span>
+  <span class="s">DEPENDS</span> <span class="s">Eigen3</span>
+<span class="p">)</span>
 
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-  ${Eigen3_INCLUDE_DIRS}
-)
-
-
-add_executable(hovering_example src/hovering_example.cpp)
-target_link_libraries(hovering_example ${catkin_LIBRARIES})
-add_dependencies(hovering_example ${catkin_EXPORTED_TARGETS})
+<span class="nb">include_directories</span><span class="p">(</span>
+  <span class="o">${</span><span class="nv">catkin_INCLUDE_DIRS</span><span class="o">}</span>
+  <span class="o">${</span><span class="nv">Eigen3_INCLUDE_DIRS</span><span class="o">}</span>
+<span class="p">)</span>
 
 
-foreach(dir launch models resource worlds)
-   install(DIRECTORY ${dir}/
-      DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach(dir)
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">hovering_example</span> <span class="s">src/hovering_example.cpp</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">hovering_example</span> <span class="o">${</span><span class="nv">catkin_LIBRARIES</span><span class="o">}</span><span class="p">)</span>
+<span class="nb">add_dependencies</span><span class="p">(</span><span class="s">hovering_example</span> <span class="o">${</span><span class="nv">catkin_EXPORTED_TARGETS</span><span class="o">}</span><span class="p">)</span>
 
-install(TARGETS hovering_example
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
 
-install(
-  DIRECTORY include/${PROJECT_NAME}/
-  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-  FILES_MATCHING PATTERN &quot;*.h&quot;
-)
+<span class="nb">foreach</span><span class="p">(</span><span class="s">dir</span> <span class="s">launch</span> <span class="s">models</span> <span class="s">resource</span> <span class="s">worlds</span><span class="p">)</span>
+   <span class="nb">install</span><span class="p">(</span><span class="s">DIRECTORY</span> <span class="o">${</span><span class="nv">dir</span><span class="o">}</span><span class="s">/</span>
+      <span class="s">DESTINATION</span> <span class="o">${</span><span class="nv">CATKIN_PACKAGE_SHARE_DESTINATION</span><span class="o">}</span><span class="s">/</span><span class="o">${</span><span class="nv">dir</span><span class="o">}</span><span class="p">)</span>
+<span class="nb">endforeach</span><span class="p">(</span><span class="s">dir</span><span class="p">)</span>
+
+<span class="nb">install</span><span class="p">(</span><span class="s">TARGETS</span> <span class="s">hovering_example</span>
+  <span class="s">ARCHIVE</span> <span class="s">DESTINATION</span> <span class="o">${</span><span class="nv">CATKIN_PACKAGE_LIB_DESTINATION</span><span class="o">}</span>
+  <span class="s">LIBRARY</span> <span class="s">DESTINATION</span> <span class="o">${</span><span class="nv">CATKIN_PACKAGE_LIB_DESTINATION</span><span class="o">}</span>
+  <span class="s">RUNTIME</span> <span class="s">DESTINATION</span> <span class="o">${</span><span class="nv">CATKIN_PACKAGE_BIN_DESTINATION</span><span class="o">}</span>
+<span class="p">)</span>
+
+<span class="nb">install</span><span class="p">(</span>
+  <span class="s">DIRECTORY</span> <span class="s">include/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="s">/</span>
+  <span class="s">DESTINATION</span> <span class="o">${</span><span class="nv">CATKIN_PACKAGE_INCLUDE_DESTINATION</span><span class="o">}</span>
+  <span class="s">FILES_MATCHING</span> <span class="s">PATTERN</span> <span class="s2">&quot;*.h&quot;</span>
+<span class="p">)</span>
 </code></pre></div>
 
               
