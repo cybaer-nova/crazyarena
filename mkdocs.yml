@@ -21,6 +21,7 @@ theme:
   icon:
     logo: material/rocket-launch 
     repo: fontawesome/brands/github-alt
+  favicon: images/favicon.png
   # Extra features
   features:
     # ---------------------
