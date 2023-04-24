@@ -6,18 +6,8 @@ repo_name: crazyarena
 #edit_uri: edit/main/docs/
 site_author: Francisco Santos
 theme: 
-  name: material
-  palette:
-  - media: '(prefers-color-scheme: light)'
-    scheme: default
-    toggle:
-      icon: material/toggle-switch-off-outline
-      name: Switch to dark mode
-  - media: '(prefers-color-scheme: dark)'
-    scheme: slate
-    toggle:
-      icon: material/toggle-switch
-      name: Switch to light mode
+  name: gitbook
+
   icon:
     repo: fontawesome/brands/github
   # Extra features
@@ -47,14 +37,7 @@ theme:
   - search.highlight
     # Allow sharing a search result
   - search.share
-markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
+
 
 plugins:
   - monorepo
