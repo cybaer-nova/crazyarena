@@ -30,7 +30,7 @@ Copy the contents of the **catkin_ws/src/CrazyS/rotors_gazebo/src/nodes/hovering
 
 ### package.xml
 
-Fill in the **package.xml** file as shown to include all the libraries needed.
+Fill in the **package.xml** file as shown to include all the libraries needed. The contents of this file are based on the hovering example package provided by the **CrazyS** package.
 
 ```xml
 <package>
@@ -88,7 +88,7 @@ Fill in the **package.xml** file as shown to include all the libraries needed.
 
 Finally, fill in the **CMakeLists.txt** file as shown to include all the libraries needed:
 
-```xml
+```cmake
 cmake_minimum_required(VERSION 3.0.2)
 project(hello_world)
 
@@ -116,7 +116,6 @@ include_directories(
   ${Eigen3_INCLUDE_DIRS}
 )
 
-
 add_executable(hovering_example src/hovering_example.cpp)
 target_link_libraries(hovering_example ${catkin_LIBRARIES})
 add_dependencies(hovering_example ${catkin_EXPORTED_TARGETS})
@@ -139,3 +138,7 @@ install(
   FILES_MATCHING PATTERN "*.h"
 )
 ```
+
+### Running the simulation
+
+Before running the simulation the package must be build. To do this navigate to the **catkin_ws** folder and run the command ```catkin build```. After this the new built workspace must be sourced. To do this run the command ```source devel/setup.bash```. Now the simulation can be launched by running ```roslaunch hello_world hovering_example.launch```.
