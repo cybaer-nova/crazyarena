@@ -50,6 +50,9 @@ theme:
     # Allow sharing a search result
   - search.share
   - navigation.footer
+  - navigation.path
+  - toc.follow
+  - navigation.indexes
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true

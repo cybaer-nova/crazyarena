@@ -1,8 +1,8 @@
-# Using **CrazyS**
+# Using CrazyS
 
 test
 
-# Using **Crazyswarm**
+# Using Crazyswarm
 
 test
 
