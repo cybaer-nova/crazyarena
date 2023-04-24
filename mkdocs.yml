@@ -49,6 +49,7 @@ theme:
   - search.highlight
     # Allow sharing a search result
   - search.share
+  - navigation.footer
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
