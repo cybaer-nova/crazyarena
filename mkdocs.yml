@@ -58,6 +58,7 @@ theme:
   - navigation.path
   - toc.integrate
   - navigation.indexes
+  - navigation.expand
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
