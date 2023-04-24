@@ -24,6 +24,11 @@ Moreover both the CrazyS and Crazyswarm workspaces are available outside the con
 
 The repository also includes a convenience script to remove the container, image and volumes from docker. 
 
+
+!!! note
+
+    If you are using this script as middle step to fix your installation don't forget to delete the catkin_ws and crazyswarm folders before installing again.
+
 > **Note** 
 > If you are using this script as middle step to fix your installation don't forget to delete the catkin_ws and crazyswarm folders before installing again.
 
@@ -32,4 +37,4 @@ The repository also includes a convenience script to remove the container, image
 ```
 
 > **Warning**
-> Make sure you only make changes to the contents of the volumes (catkin_ws and crazyswarm folders) while the container is running, otherwise the changes are not persistent and you will loose them.
+> Make sure you only make changes to the contents of the volumes (catkin_ws and crazyswarm folders) while the container is running, otherwise the changes are not persistent and you may loose them.
