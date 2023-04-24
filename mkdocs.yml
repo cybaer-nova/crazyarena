@@ -20,7 +20,7 @@ theme:
       name: Switch to light mode
   icon:
     logo: material/rocket-launch 
-    repo: fontawesome/brands/github-alt
+    repo: fontawesome/brands/git-alt
   favicon: images/favicon.png
   # Extra features
   features:
