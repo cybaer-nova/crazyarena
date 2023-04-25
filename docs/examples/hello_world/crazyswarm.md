@@ -119,7 +119,7 @@ if __name__ == "__main__":
 
 #### crazyflies.yaml
 
-This file contains your vehicle definitions. To learn how to use this file check the **Crazyswarm** documentaion. For now a simulation example is given.
+This file contains your vehicle definitions. To learn how to use this file check the **Crazyswarm** [documentation](https://crazyswarm.readthedocs.io/en/latest/configuration.html). For now a simulation example is given.
 
 ```yaml
 crazyflies:
