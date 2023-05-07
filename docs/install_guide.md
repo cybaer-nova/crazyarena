@@ -9,6 +9,10 @@ cd crazyarena
 
 A script is provided to install the crazyarena. The build flag ```-b``` can be used to build the image in adition to creating the container. This flag takes an argument regarding the base image to use. If you have an nvidia gpu then use the **cuda** image as it contains the nvidia drivers, otherwise use the **base** image.
 
+!!! note
+
+    When using the cuda image, it is necessary to install the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html). The NVIDIA Container Toolkit allows users to build and run GPU accelerated containers. 
+
 ```bash
 ./run_crazyarena.bash -b <base,cuda>
 ```
