@@ -142,3 +142,8 @@ install(
 ### Running the simulation
 
 Before running the simulation the package must be build. To do this navigate to the **catkin_ws** folder and run the command ```catkin build```. After this the new built workspace must be sourced. To do this run the command ```source devel/setup.bash```. Now the simulation can be launched by running ```roslaunch hello_world hovering_example.launch```. You should see the gazebo gui launch and an instance of the crazyflie vehicle spawn. The simulation only performs a simple takeoff and hover.
+
+<figure markdown>
+  ![CrazyS hello_world demo](../../images/crazyS_demo.png "CrazyS hello_world demo")
+  <figcaption>CrazyS hello_world demo</figcaption>
+</figure>

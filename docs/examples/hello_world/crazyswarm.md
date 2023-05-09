@@ -141,6 +141,10 @@ cd ~/crazyswarm/ros_ws/src/hello_world/scripts
 chmod +x hello_world.py
 python3 hello_world.py --sim
 ```
+<figure markdown>
+  ![Crazyswarm hello_world simulation demo](../../images/crazyswarm_sim_demo.png "Crazyswarm hello_world simulation demo")
+  <figcaption>Crazyswarm hello_world simulation demo</figcaption>
+</figure>
 
 #### Real Experiment
 
