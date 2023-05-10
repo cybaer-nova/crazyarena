@@ -1,6 +1,5 @@
 # Installation Instructions
 
-[![Docker](https://badges.aleen42.com/src/docker.svg)](https://docs.docker.com/)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-20.04LTS-brightgreen?style=flat)](https://releases.ubuntu.com/20.04/)
 [![ROS](https://img.shields.io/badge/ROS-Noetic-brightgreen?style=flat)](http://wiki.ros.org/noetic)
 [![CrazyS](https://img.shields.io/badge/CrazyS-7.0.1-brightgreen?style=flat)](https://github.com/gsilano/CrazyS)
