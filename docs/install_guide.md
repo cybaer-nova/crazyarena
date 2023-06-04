@@ -12,7 +12,7 @@ git clone https://github.com/hardtekpt/crazyarena
 cd crazyarena
 ```
 
-A script is provided to install the crazyarena. This script is responsible for building the docker image from the Dockerfile as well as creating the container from the built image. Additionally, it is possible to include the nvidia drivers in the image if you have an nvidia gpu. To do this select the **cuda** image, otherwise use the **base** image. To use the script the flags ```-b``` and ```-c``` can be used to build the image and create the container respectively.
+A script is provided to install the crazyarena. This script is responsible for building the docker image from the Dockerfile as well as creating the container from the built image. Additionally, it is possible to include the nvidia drivers in the image if you have an nvidia gpu. To do this select the **cuda** image, otherwise use the **base** image. To use the script, the flags ```-b``` and ```-c``` can be used to build the image and create the container respectively.
 
 !!! note
 
