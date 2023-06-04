@@ -12,6 +12,7 @@ source devel/setup.bash
 If you get a USB permissions error while using **cfclient** run these commands as root to give the crazyuser the necessary permissions. More information [here](https://www.bitcraze.io/documentation/repository/crazyflie-lib-python/master/installation/usb_permissions/).
 
 ```bash
+apt-get install udev
 mkdir -p /etc/udev/rules.d
 /lib/systemd/systemd-udevd —daemon
 groupadd plugdev
