@@ -491,7 +491,8 @@
 </code></pre></div>
 <hr />
 <p>If you get a USB permissions error while using <strong>cfclient</strong> run these commands as root to give the crazyuser the necessary permissions. More information <a href="https://www.bitcraze.io/documentation/repository/crazyflie-lib-python/master/installation/usb_permissions/">here</a>.</p>
-<div class="highlight"><pre><span></span><code>mkdir -p /etc/udev/rules.d
+<div class="highlight"><pre><span></span><code>apt-get install udev
+mkdir -p /etc/udev/rules.d
 /lib/systemd/systemd-udevd —daemon
 groupadd plugdev
 usermod -a -G plugdev crazyuser
