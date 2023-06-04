@@ -1,10 +1,11 @@
 
 IMAGE="osrf/ros:noetic-desktop-full"
 
-while getopts b: flag
+while getopts b:c: flag
 do
     case "${flag}" in
         b) build=${OPTARG};;
+        c) create=${OPTARG};;
     esac
 done
 
@@ -26,7 +27,7 @@ fi
 xhost local:root
 XAUTH=/tmp/.docker.xauth
 
-if [[ $build == cuda ]]
+if [[ $create == cuda ]]
 then
     docker create -i \
     --name=crazyarena \
@@ -45,7 +46,9 @@ then
     --user crazyuser \
     --workdir /home/crazyuser \
     crazyarena
-else
+fi
+if [[ $create == base ]]
+then
     docker create -i \
     --name=crazyarena \
     --env="DISPLAY=$DISPLAY" \
