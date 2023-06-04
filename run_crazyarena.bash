@@ -26,7 +26,9 @@ fi
 xhost local:root
 XAUTH=/tmp/.docker.xauth
 
-docker create -i \
+if [[ $build == cuda ]]
+then
+    docker create -i \
     --name=crazyarena \
     --env="DISPLAY=$DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
@@ -43,3 +45,22 @@ docker create -i \
     --user crazyuser \
     --workdir /home/crazyuser \
     crazyarena
+else
+    docker create -i \
+    --name=crazyarena \
+    --env="DISPLAY=$DISPLAY" \
+    --env="QT_X11_NO_MITSHM=1" \
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    --env="XAUTHORITY=$XAUTH" \
+    --volume="$XAUTH:$XAUTH" \
+    --volume="crazyarena_catkin_ws_volume:/home/crazyuser/catkin_ws:rw" \
+    --volume="crazyarena_crazyswarm_volume:/home/crazyuser/crazyswarm:rw" \
+    --net=host \
+    --privileged \
+    --user crazyuser \
+    --workdir /home/crazyuser \
+    crazyarena
+fi
+
+
+

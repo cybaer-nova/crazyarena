@@ -104,21 +104,23 @@ RUN source /opt/ros/noetic/setup.bash && \
 #     source ../../../devel/setup.bash && \
 #     $CSW_PYTHON -m pytest
 
-USER root
-RUN mkdir -p /etc/udev/rules.d
-RUN /lib/systemd/systemd-udevd —daemon
-RUN groupadd plugdev
-RUN usermod -a -G plugdev crazyuser
-RUN cat <<EOF | sudo tee /etc/udev/rules.d/99-bitcraze.rules > /dev/null
-# Crazyradio (normal operation)
-SUBSYSTEM=="usb", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="7777", MODE="0664", GROUP="plugdev"
-# Bootloader
-SUBSYSTEM=="usb", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="0101", MODE="0664", GROUP="plugdev"
-# Crazyflie (over USB)
-SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", MODE="0664", GROUP="plugdev"
-EOF
-RUN udevadm control --reload-rules
-RUN udevadm trigger
+# USER root
+# RUN mkdir -p /etc/udev/rules.d
+# RUN /lib/systemd/systemd-udevd —daemon
+# RUN groupadd plugdev
+# RUN usermod -a -G plugdev crazyuser
+# RUN cat <<EOF | sudo tee /etc/udev/rules.d/99-bitcraze.rules > /dev/null
+# # Crazyradio (normal operation)
+# SUBSYSTEM=="usb", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="7777", MODE="0664", GROUP="plugdev"
+# # Bootloader
+# SUBSYSTEM=="usb", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="0101", MODE="0664", GROUP="plugdev"
+# # Crazyflie (over USB)
+# SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", MODE="0664", GROUP="plugdev"
+# EOF
+# RUN udevadm control --reload-rules
+# RUN udevadm trigger
+
+# USER crazyuser
 
 # Make the workspace visible outside the container
 VOLUME /home/crazyuser/catkin_ws
