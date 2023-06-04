@@ -485,11 +485,9 @@
 
 
 <h1 id="common-errors">Common errors</h1>
-<p>If you encouter the issue <em>ModuleNotFoundError: No module named 'crazyswarm'</em> while running a real experiment using the crazyswarm package, add these lines in the begining of the <em>crazyflie.py</em> file.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># /home/crazyuser/crazyswarm/ros_ws/src/crazyswarm/scripts/pycrazyswarm/crazyflie.py</span>
-
-<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">dirname</span><span class="p">,</span> <span class="n">abspath</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dirname</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))))</span>
+<p>If you encouter the issue <em>ModuleNotFoundError: No module named 'crazyswarm'</em> while running a real experiment using the crazyswarm package, make sure you have sourced the setup file with the missing module path.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/crazyswarm/ros_ws
+<span class="nb">source</span> devel/setup.bash
 </code></pre></div>
 
               
