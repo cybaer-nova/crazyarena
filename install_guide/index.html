@@ -495,12 +495,12 @@
 <div class="highlight"><pre><span></span><code>git clone https://github.com/hardtekpt/crazyarena
 <span class="nb">cd</span> crazyarena
 </code></pre></div>
-<p>A script is provided to install the crazyarena. The build flag <code>-b</code> can be used to build the image in adition to creating the container. This flag takes an argument regarding the base image to use. If you have an nvidia gpu then use the <strong>cuda</strong> image as it contains the nvidia drivers, otherwise use the <strong>base</strong> image.</p>
+<p>A script is provided to install the crazyarena. This script is responsible for building the docker image from the Dockerfile as well as creating the container from the built image. Additionally, it is possible to include the nvidia drivers in the image if you have an nvidia gpu. To do this select the <strong>cuda</strong> image, otherwise use the <strong>base</strong> image. To use the script the flags <code>-b</code> and <code>-c</code> can be used to build the image and create the container respectively.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When using the cuda image, it is necessary to install the <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit">NVIDIA Container Toolkit</a> on the host machine. The NVIDIA Container Toolkit allows users to build and run GPU accelerated containers using container engines such as Docker.</p>
+<p>When using the cuda image, it is necessary to install the <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit">NVIDIA Container Toolkit</a> on the host machine in addition to the specific graphics drivers for your gpu. The NVIDIA Container Toolkit allows users to build and run GPU accelerated containers using container engines such as Docker.</p>
 </div>
-<div class="highlight"><pre><span></span><code>./run_crazyarena.bash -b &lt;base,cuda&gt;
+<div class="highlight"><pre><span></span><code>./run_crazyarena.bash -b &lt;base,cuda&gt; -c &lt;base,cuda&gt;
 </code></pre></div>
 <p>After the installation is complete it is possible to start the crazyarena container and open a shell inside. </p>
 <div class="highlight"><pre><span></span><code>docker start crazyarena
