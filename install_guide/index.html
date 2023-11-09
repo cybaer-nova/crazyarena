@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://hardtekpt.github.io/crazyarena/install_guide/">
       
       <link rel="icon" href="../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
@@ -21,11 +21,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -358,7 +359,7 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -388,7 +389,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
       
       
       
@@ -486,12 +487,20 @@
 
 
 <h1 id="installation-instructions">Installation Instructions</h1>
+<p><a href="https://releases.ubuntu.com/20.04/"><img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-20.04LTS-brightgreen?style=flat" /></a>
+<a href="http://wiki.ros.org/noetic"><img alt="ROS" src="https://img.shields.io/badge/ROS-Noetic-brightgreen?style=flat" /></a>
+<a href="https://github.com/gsilano/CrazyS"><img alt="CrazyS" src="https://img.shields.io/badge/CrazyS-7.0.1-brightgreen?style=flat" /></a>
+<a href="https://github.com/USC-ACTLab/crazyswarm"><img alt="CrazySwarm" src="https://img.shields.io/badge/Crazyswarm-1-brightgreen?style=flat" /></a></p>
 <p>Start by cloning this repository.</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/hardtekpt/crazyarena
 <span class="nb">cd</span> crazyarena
 </code></pre></div>
-<p>A script is provided to install the crazyarena. The build flag <code>-b</code> can be used to build the image in adition to creating the container. This flag takes an argument regarding the base image to use. If you have an nvidia gpu then use the <strong>cuda</strong> image as it contains the nvidia drivers, otherwise use the <strong>base</strong> image.</p>
-<div class="highlight"><pre><span></span><code>./run_crazyarena.bash -b &lt;base,cuda&gt;
+<p>A script is provided to install the crazyarena. This script is responsible for building the docker image from the Dockerfile as well as creating the container from the built image. Additionally, it is possible to include the nvidia drivers in the image if you have an nvidia gpu. To do this select the <strong>cuda</strong> image, otherwise use the <strong>base</strong> image. To use the script, the flags <code>-b</code> and <code>-c</code> can be used to build the image and create the container respectively.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using the cuda image, it is necessary to install the <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit">NVIDIA Container Toolkit</a> on the host machine in addition to the specific graphics drivers for your gpu. The NVIDIA Container Toolkit allows users to build and run GPU accelerated containers using container engines such as Docker.</p>
+</div>
+<div class="highlight"><pre><span></span><code>./run_crazyarena.bash -b &lt;base,cuda&gt; -c &lt;base,cuda&gt;
 </code></pre></div>
 <p>After the installation is complete it is possible to start the crazyarena container and open a shell inside. </p>
 <div class="highlight"><pre><span></span><code>docker start crazyarena
@@ -512,10 +521,11 @@ docker <span class="nb">exec</span> -it crazyarena bash
 
               
             </article>
+            
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
           </a>
@@ -524,7 +534,8 @@ docker <span class="nb">exec</span> -it crazyarena bash
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../repo_structure/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Repository Structure" rel="prev">
@@ -574,10 +585,10 @@ docker <span class="nb">exec</span> -it crazyarena bash
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.footer", "navigation.path", "toc.integrate", "navigation.indexes", "navigation.expand"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.footer", "navigation.path", "toc.integrate", "navigation.indexes", "navigation.expand"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
     
   </body>
