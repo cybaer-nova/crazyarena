@@ -12,3 +12,7 @@ This repository makes use of the **CrazyS** and **Crazyswarm** packages as well 
 ### Prerequesites
 
 Make sure you have docker properly installed before continuing, official instalation instructions are available [here](https://docs.docker.com/get-docker/). It is also recommended that you visit the documentation for [CrazyS](https://github.com/gsilano/CrazyS/wiki) and [Crazyswarm](https://crazyswarm.readthedocs.io/en/latest/index.html).
+
+!!! warning
+
+    This repository has only been tested on ubuntu 18.04. Windows is not supported and virtual machines are discouraged.

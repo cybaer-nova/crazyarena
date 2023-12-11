@@ -22,6 +22,9 @@ RUN apt-get install -y git && apt-get install -y python3-pip && apt-get install 
 RUN apt-get install -y libxcb-xinerama0
 RUN pip3 install "PyQt5-sip==12.9.0"
 RUN pip3 install "PyQt5==5.15.0"
+RUN pip install --user --upgrade pip
+RUN python3 -m pip install PyQt5
+RUN python3 -m pip install PyQt6
 RUN pip3 install -v cfclient
 #RUN yes | pip3 install --no-input --force-reinstall -v "cfclient==2022.12"
 
@@ -66,7 +69,7 @@ RUN source /opt/ros/noetic/setup.bash && \
     cd /home/crazyuser/catkin_ws/ && \
     rosdep update && \
     catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release -DCATKIN_ENABLE_TESTING=False &&\
-    catkin build
+    catkin build -j2
 
 RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc && \
     echo "source /home/crazyuser/catkin_ws/devel/setup.bash" >> ~/.bashrc

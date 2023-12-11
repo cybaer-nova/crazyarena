@@ -18,6 +18,10 @@ A script is provided to install the crazyarena. This script is responsible for b
 
     When using the cuda image, it is necessary to install the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit) on the host machine in addition to the specific graphics drivers for your gpu. The NVIDIA Container Toolkit allows users to build and run GPU accelerated containers using container engines such as Docker.
 
+!!! note
+
+    If you have a CPU with more than 4 cores you can find the line with the command ```catkin build -j2``` and change the number 2 for (<your number of cores> - 2). If you use all the cores to compile the workspace it can lead to a crash.
+
 ```bash
 ./run_crazyarena.bash -b <base,cuda> -c <base,cuda>
 ```
