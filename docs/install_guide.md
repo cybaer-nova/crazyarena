@@ -8,7 +8,7 @@
 Start by cloning this repository.
 
 ```bash
-git clone https://github.com/hardtekpt/crazyarena
+git clone https://github.com/cybaer-nova/crazyarena
 cd crazyarena
 ```
 

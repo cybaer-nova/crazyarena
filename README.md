@@ -1,9 +1,9 @@
 # Crazyarena Repository
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT?style=flat)
-[![GitHub last commit](https://img.shields.io/github/last-commit/hardtekpt/crazyarena/master?style=flat)]()
-[![GitHub commit activity the past week, 4 weeks](https://img.shields.io/github/commit-activity/m/hardtekpt/crazyarena/master?style=flat)]()
-![Repo Size](https://img.shields.io/github/repo-size/hardtekpt/crazyarena?style=flat)
+[![GitHub last commit](https://img.shields.io/github/last-commit/cybaer-nova/crazyarena/master?style=flat)]()
+[![GitHub commit activity the past week, 4 weeks](https://img.shields.io/github/commit-activity/m/cybaer-nova/crazyarena/master?style=flat)]()
+![Repo Size](https://img.shields.io/github/repo-size/cybaer-nova/crazyarena?style=flat)
 [![Docker](https://badges.aleen42.com/src/docker.svg)](https://docs.docker.com/)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-20.04LTS-brightgreen?style=flat)](https://releases.ubuntu.com/20.04/)
 [![ROS](https://img.shields.io/badge/ROS-Noetic-brightgreen?style=flat)](http://wiki.ros.org/noetic)
@@ -14,4 +14,4 @@ This repository makes use of the **CrazyS** and **Crazyswarm** packages as well 
 
 ## Documentation
 
-https://hardtekpt.github.io/crazyarena/
+https://cybaer-nova.github.io/crazyarena/
