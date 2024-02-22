@@ -55,7 +55,7 @@ RUN source /opt/ros/noetic/setup.bash && \
     cd /home/crazyuser/catkin_ws/ && \
     catkin init && \
     cd /home/crazyuser/catkin_ws/src && \
-    git clone -b dev/ros-noetic https://github.com/gsilano/CrazyS.git && \
+    git clone https://github.com/cybaer-nova/crazys-uavs.git && \
     git clone -b med18_gazebo9 https://github.com/gsilano/mav_comm.git
 
 USER root
