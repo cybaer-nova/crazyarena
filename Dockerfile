@@ -49,6 +49,7 @@ SHELL ["/bin/bash", "-c"]
 
 # Setup a workspace and install CrazyS packages
 RUN source /opt/ros/noetic/setup.bash && \
+    mkdir -p /home/crazyuser/datalogs && \
     mkdir -p /home/crazyuser/catkin_ws/src && \
     cd /home/crazyuser/catkin_ws/src && \
     catkin_init_workspace && \
@@ -128,3 +129,4 @@ RUN source /opt/ros/noetic/setup.bash && \
 # Make the workspace visible outside the container
 VOLUME /home/crazyuser/catkin_ws
 VOLUME /home/crazyuser/crazyswarm
+VOLUME /home/crazyuser/datalogs
