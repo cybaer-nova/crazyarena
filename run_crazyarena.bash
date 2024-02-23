@@ -18,6 +18,8 @@ fi
 if [[ $1 == -b ]]
 then
     docker build --build-arg image=$IMAGE -t crazyarena .
+    mkdir datalogs
+    docker volume create --driver local -o o=bind -o type=none -o device="$(pwd)/datalogs" crazyarena_datalogs_volume 
     mkdir catkin_ws
     docker volume create --driver local -o o=bind -o type=none -o device="$(pwd)/catkin_ws" crazyarena_catkin_ws_volume 
     mkdir crazyswarm
@@ -39,6 +41,7 @@ then
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --env="XAUTHORITY=$XAUTH" \
     --volume="$XAUTH:$XAUTH" \
+    --volume="crazyarena_datalogs_volume:/home/crazyuser/datalogs:rw" \
     --volume="crazyarena_catkin_ws_volume:/home/crazyuser/catkin_ws:rw" \
     --volume="crazyarena_crazyswarm_volume:/home/crazyuser/crazyswarm:rw" \
     --net=host \
@@ -56,6 +59,7 @@ then
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --env="XAUTHORITY=$XAUTH" \
     --volume="$XAUTH:$XAUTH" \
+    --volume="crazyarena_datalogs_volume:/home/crazyuser/datalogs:rw" \
     --volume="crazyarena_catkin_ws_volume:/home/crazyuser/catkin_ws:rw" \
     --volume="crazyarena_crazyswarm_volume:/home/crazyuser/crazyswarm:rw" \
     --net=host \
